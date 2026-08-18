@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav(header);
   }
 
-  initHomeHeroSequence();
+  initHeroSequence();
   initScrollReveal();
   initCountdown();
   initProgrammeTabs();
@@ -133,22 +133,26 @@ function initCountdown() {
   window.setInterval(render, 1000);
 }
 
-function initHomeHeroSequence() {
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function initHeroSequence() {
   const hero = document.querySelector('.hero');
   if (!hero) return;
 
-  const sequenceTargets = [
-    hero.querySelector('.hero__title'),
-    hero.querySelector('.hero__tagline'),
-    hero.querySelector('.hero__pills'),
-    hero.querySelector('.countdown'),
-  ].filter(Boolean);
+  const isHomeHero = !hero.className.split(/\s+/).some((cls) => cls.startsWith('hero--'));
+  const sequenceSelectors = isHomeHero
+    ? ['.hero__title', '.hero__tagline', '.hero__pills', '.countdown']
+    : ['.hero-badge', '.hero__eyebrow', ':scope > .hero__content > .eyebrow', '.hero__title', '.hero__tagline', '.hero__tagline-upper', '.hero__kicker', '.hero__sub'];
+
+  const sequenceTargets = sequenceSelectors
+    .map((selector) => hero.querySelector(selector))
+    .filter(Boolean);
 
   if (!sequenceTargets.length) return;
 
-  document.body.classList.add('js-has-animations');
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (prefersReducedMotion()) {
     sequenceTargets.forEach((element) => element.classList.add('is-visible'));
     return;
   }
@@ -157,7 +161,7 @@ function initHomeHeroSequence() {
     element.classList.add('hero-sequence-item');
     window.setTimeout(() => {
       element.classList.add('is-visible');
-    }, 180 + index * 300);
+    }, 180 + index * 280);
   });
 }
 
@@ -174,19 +178,44 @@ function initScrollReveal() {
     .programme-preview .section-title,
     .preview-card,
     .programme-preview .section-actions,
-    .venue-media,
-    .venue-copy,
+    .venue-teaser .venue-media,
+    .venue-teaser .venue-copy,
     .small-card,
     .registration-cta .section-title,
     .registration-cta .line-starline,
     .registration-cta .registration-text,
     .registration-cta .registration-email,
-    .registration-cta .section-actions
+    .registration-cta .section-actions,
+    .day-tabs,
+    .day-panel,
+    .registration-cta--strip .registration-cta__heading,
+    .registration-cta--strip .registration-text,
+    .registration-cta--strip .section-actions,
+    .letter-card,
+    .theme-callout,
+    .invitation-info__card,
+    .venue-detail-media,
+    .venue-detail-copy,
+    .experience-bhutan .eyebrow,
+    .experience-bhutan .line-starline,
+    .experience-bhutan .experience-title,
+    .experience-bhutan .experience-text,
+    .bhutan-card,
+    .getting-to-bhutan .experience-eyebrow,
+    .getting-to-bhutan .line-starline,
+    .getting-to-bhutan .experience-title,
+    .getting-card,
+    .venue-cta__title,
+    .venue-cta__text,
+    .venue-cta .section-actions,
+    .contact-info-card,
+    .contact-event-card,
+    .contact-form-card
   `);
 
   if (!revealTargets.length) return;
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduceMotion = prefersReducedMotion();
   revealTargets.forEach((element) => {
     element.classList.add('scroll-reveal');
     if (reduceMotion) {
@@ -195,6 +224,22 @@ function initScrollReveal() {
   });
 
   if (reduceMotion) return;
+
+  document.querySelectorAll(`
+    .info-strip__inner,
+    .cards-grid,
+    .preview-cards,
+    .invitation-info__grid,
+    .bhutan-attractions,
+    .getting-grid,
+    .contact-sidebar
+  `).forEach((group) => {
+    Array.from(group.children)
+      .filter((child) => child.classList.contains('scroll-reveal'))
+      .forEach((child, index) => {
+        child.style.setProperty('--reveal-delay', `${index * 90}ms`);
+      });
+  });
 
   const observer = new IntersectionObserver(
     (entries, currentObserver) => {

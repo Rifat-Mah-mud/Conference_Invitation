@@ -542,6 +542,7 @@ main {
 
 .scroll-reveal {
   transition: opacity 0.65s ease, transform 0.65s ease;
+  transition-delay: var(--reveal-delay, 0s);
 }
 
 .hero-sequence-item.is-visible,
