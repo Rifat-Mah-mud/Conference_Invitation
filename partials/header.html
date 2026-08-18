@@ -1,0 +1,54 @@
+<!--
+  HEADER / NAVBAR
+  Copy into each page just after <body>.
+  Set data-page to: home | programme | invitation | venue | contact
+-->
+<header class="site-header" id="site-header" data-page="home">
+  <div class="site-header__inner">
+    <a class="site-logo" href="index.html" aria-label="South Asia Cardiovascular Meet 2026 home">
+      <svg class="site-logo__badge" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
+        <defs>
+          <clipPath id="header-heart-clip">
+            <path d="M24 35.5
+               C24 35.5 11.5 26.8 11.5 19.2
+               C11.5 15.2 14.4 12.6 17.8 12.6
+               C20.4 12.6 22.4 14 24 16.6
+               C25.6 14 27.6 12.6 30.2 12.6
+               C33.6 12.6 36.5 15.2 36.5 19.2
+               C36.5 26.8 24 35.5 24 35.5Z"/>
+          </clipPath>
+        </defs>
+        <circle cx="24" cy="24" r="22.5" fill="var(--color-cream)" stroke="var(--color-gold)" stroke-width="1.5"/>
+        <path fill="var(--color-maroon)"
+          d="M24 35.5
+             C24 35.5 11.5 26.8 11.5 19.2
+             C11.5 15.2 14.4 12.6 17.8 12.6
+             C20.4 12.6 22.4 14 24 16.6
+             C25.6 14 27.6 12.6 30.2 12.6
+             C33.6 12.6 36.5 15.2 36.5 19.2
+             C36.5 26.8 24 35.5 24 35.5Z"/>
+        <path fill="none" stroke="var(--color-white)" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#header-heart-clip)"
+          d="M9 24 H15.2 L17.1 19.2 L19.4 30.2 L22.1 15 L24.8 27.4 L26.6 24 H31.2 L33.1 21.2 L35.2 24 H39"/>
+      </svg>
+      <span class="site-logo__text">
+        <span>South Asia</span>
+        <span>Cardiovascular</span>
+        <span>Meet 2026</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="programme.html" data-nav="programme">Programme</a>
+      <a href="invitation.html" data-nav="invitation">Invitation</a>
+      <a href="venue.html" data-nav="venue">Venue &amp; Bhutan</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+  </div>
+</header>
