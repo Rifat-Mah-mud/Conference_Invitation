@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   highlightActiveNav(header);
   initMobileNav(header);
+
+  initCountdown();
 });
 
 function getPageId(header) {
@@ -73,4 +75,57 @@ function initMobileNav(header) {
       setOpen(false);
     }
   });
+}
+
+/**
+ * Countdown helper.
+ * @param {Date|string|number} targetDate - Target time (local JS Date, ISO string with TZ, or timestamp ms)
+ * @returns {{days:number, hours:number, minutes:number, seconds:number}} remaining time components
+ */
+function getCountdown(targetDate) {
+  const targetMs = targetDate instanceof Date ? targetDate.getTime() : new Date(targetDate).getTime();
+  const nowMs = Date.now();
+
+  const diffMs = targetMs - nowMs;
+  if (diffMs <= 0) {
+    return null;
+  }
+
+  const totalSeconds = Math.floor(diffMs / 1000);
+  const days = Math.floor(totalSeconds / (60 * 60 * 24));
+  const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+  const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+  const seconds = totalSeconds % 60;
+
+  return { days, hours, minutes, seconds };
+}
+
+function initCountdown() {
+  const boxes = document.getElementById('countdownBoxes');
+  const begunEl = document.getElementById('countdownBegun');
+  if (!boxes || !begunEl) return;
+
+  const dayEl = document.getElementById('countDays');
+  const hourEl = document.getElementById('countHours');
+  const minuteEl = document.getElementById('countMinutes');
+  const secondEl = document.getElementById('countSeconds');
+
+  const target = new Date('2026-09-19T00:00:00+06:00'); // Bhutan time (UTC+6)
+
+  const render = () => {
+    const remaining = getCountdown(target);
+    if (!remaining) {
+      boxes.hidden = true;
+      begunEl.hidden = false;
+      return;
+    }
+
+    dayEl.textContent = String(remaining.days);
+    hourEl.textContent = String(remaining.hours).padStart(2, '0');
+    minuteEl.textContent = String(remaining.minutes).padStart(2, '0');
+    secondEl.textContent = String(remaining.seconds).padStart(2, '0');
+  };
+
+  render();
+  window.setInterval(render, 1000);
 }

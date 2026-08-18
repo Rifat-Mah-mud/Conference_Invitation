@@ -69,130 +69,495 @@
 </header>
 
   <main>
-    <!-- Home page content will be added in a later phase -->
-  </main>
-<div class="site-footer-block">
-  <div class="mountain-divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="1440" height="150" fill="var(--color-navy)"/>
-      <path fill="var(--color-olive)"
-        d="M0 150 L0 118
-           L160 72 L240 28 L320 68 L400 102
-           L560 64 L720 10 L880 70 L1000 104
-           L1120 58 L1220 32 L1320 78 L1440 112
-           L1440 150 Z"/>
-      <g fill="#8A8A5C">
-        <g transform="translate(226 108)">
-          <rect x="6" y="16" width="24" height="26"/>
-          <rect x="2" y="13" width="32" height="4"/>
-          <polygon points="0,13 18,2 36,13"/>
-          <polygon points="6,6 18,-4 30,6"/>
-          <rect x="16.5" y="-14" width="3" height="12"/>
-          <polygon points="15,-13 18,-20 21,-13"/>
-        </g>
-        <g transform="translate(702 108)">
-          <rect x="6" y="16" width="24" height="26"/>
-          <rect x="2" y="13" width="32" height="4"/>
-          <polygon points="0,13 18,2 36,13"/>
-          <polygon points="6,6 18,-4 30,6"/>
-          <rect x="16.5" y="-14" width="3" height="12"/>
-          <polygon points="15,-13 18,-20 21,-13"/>
-        </g>
-        <g transform="translate(1202 108)">
-          <rect x="6" y="16" width="24" height="26"/>
-          <rect x="2" y="13" width="32" height="4"/>
-          <polygon points="0,13 18,2 36,13"/>
-          <polygon points="6,6 18,-4 30,6"/>
-          <rect x="16.5" y="-14" width="3" height="12"/>
-          <polygon points="15,-13 18,-20 21,-13"/>
-        </g>
-      </g>
-    </svg>
-  </div>
+    <!-- HERO -->
+    <section class="hero" aria-label="South Asia Cardiovascular Meet 2026 hero">
+      <div class="hero__content">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-line">—</span>
+          <span>19–21 SEPTEMBER 2026</span>
+          <span class="hero__eyebrow-dot">·</span>
+          <span>THIMPHU, BHUTAN</span>
+          <span class="hero__eyebrow-line">—</span>
+        </div>
 
+        <h1 class="hero__title">South Asia Cardiovascular Meet 2026</h1>
+
+        <p class="hero__tagline">
+          <em>“Connecting Hearts, Expertise &amp; Innovation for a Healthier South Asia”</em>
+        </p>
+
+        <div class="hero__pills" role="group" aria-label="Event dates and venue (informational)">
+          <div class="pill pill--outline" aria-label="Event date">
+            <svg class="pill__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8 3v4M16 3v4M3 10h18"/>
+            </svg>
+            <span>19–21 September 2026</span>
+          </div>
+          <div class="pill pill--outline" aria-label="Event venue">
+            <svg class="pill__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"
+                d="M12 21s-7-6.2-7-11.2a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/>
+              <circle cx="12" cy="9.8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <span>The Pema by Realm, Thimphu, Bhutan</span>
+          </div>
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown" aria-live="polite" aria-atomic="true">
+          <div class="countdown__label">CONGRESS BEGINS IN</div>
+          <div class="countdown__boxes" id="countdownBoxes">
+            <div class="count-box">
+              <div class="count-box__number" id="countDays">0</div>
+              <div class="count-box__unit">DAYS</div>
+            </div>
+            <div class="count-box">
+              <div class="count-box__number" id="countHours">0</div>
+              <div class="count-box__unit">HOURS</div>
+            </div>
+            <div class="count-box">
+              <div class="count-box__number" id="countMinutes">0</div>
+              <div class="count-box__unit">MINUTES</div>
+            </div>
+            <div class="count-box">
+              <div class="count-box__number" id="countSeconds">0</div>
+              <div class="count-box__unit">SECONDS</div>
+            </div>
+          </div>
+          <div class="countdown__begun" id="countdownBegun" hidden>
+            The Congress Has Begun
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="var(--color-cream)" d="M0,58 C360,96 520,12 720,28 C980,48 1140,88 1440,52 L1440,90 L0,90 Z" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- INFO STRIP -->
+    <section class="info-strip" aria-label="Event quick facts">
+      <div class="info-strip__inner">
+        <div class="info-strip__col">
+          <div class="info-strip__badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M8 3v4M16 3v4M3 10h18"/>
+            </svg>
+          </div>
+          <div class="info-strip__label">DATES</div>
+          <div class="info-strip__value"><strong>19–21 September 2026</strong></div>
+        </div>
+
+        <div class="info-strip__col">
+          <div class="info-strip__badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"
+                d="M12 21s-7-6.2-7-11.2a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/>
+              <circle cx="12" cy="9.8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.9"/>
+            </svg>
+          </div>
+          <div class="info-strip__label">VENUE</div>
+          <div class="info-strip__value"><strong>The Pema by Realm, Thimphu</strong></div>
+        </div>
+
+        <div class="info-strip__col">
+          <div class="info-strip__badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+                d="M3 12h4l2-4 3 10 2-6 2 0 3-6"/>
+              <rect x="4.5" y="11.5" width="2" height="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="info-strip__label">THEME</div>
+          <div class="info-strip__value"><strong>Advancing Cardiovascular Care</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" aria-label="About the congress">
+      <div class="section-inner">
+        <div class="eyebrow">ABOUT THE CONGRESS</div>
+        <div class="line-starline" aria-hidden="true">
+          <span class="line-starline__line"></span>
+          <svg class="line-starline__star" viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M12 2l3.2 7.1L23 10l-6 4.9L18.7 22 12 18.6 5.3 22 7 14.9 1 10l7.8-.9L12 2z"/>
+          </svg>
+          <span class="line-starline__line"></span>
+        </div>
+
+        <h2 class="section-title section-title--navy">A Premier Forum for Cardiovascular Excellence</h2>
+
+        <p class="lead">
+          The South Asia Cardiovascular Meet 2026 brings together leading cardiologists,
+          internists, and cardiovascular specialists from across the South Asian region for
+          three days of scientific exchange, clinical education, and collegial collaboration.
+        </p>
+        <p class="lead">
+          Set against the breathtaking backdrop of the Himalayas in Thimphu, Bhutan, this congress
+          offers a unique confluence of world-class science and cultural immersion — an experience
+          that nourishes both the mind and the spirit.
+        </p>
+      </div>
+    </section>
+
+    <!-- FEATURE CARDS -->
+    <section class="feature-cards" aria-label="Key focus areas">
+      <div class="cards-grid cards-grid--4">
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path fill="none" stroke="currentColor" stroke-width="1.9" d="M4 5h11l5 5v13H4V5z"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.9" d="M15 5v5h5"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.9" d="M7 13h10M7 17h8"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Evidence-Based Updates</h3>
+          <p class="feature-card__body">The latest clinical evidence and guideline updates in cardiovascular medicine.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.9"/>
+              <circle cx="17" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+                d="M3.5 20c.8-4 3.2-6 5.5-6s4.7 2 5.5 6"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+                d="M13.8 14.5c2 .3 3.7 1.7 4.2 5.5"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Expert Insights &amp; Discussions</h3>
+          <p class="feature-card__body">Interactive panel discussions with regional and international thought leaders.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+                d="M6 3c1.6 2.4 1.6 4 0 6-1.6 2 0 6 3 6h8c3 0 5-3 3-6-1.6-2-1.6-3.6 0-6"/>
+              <circle cx="12" cy="17" r="3.2" fill="none" stroke="currentColor" stroke-width="1.9"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Practical Clinical Takeaways</h3>
+          <p class="feature-card__body">Case-based learning and practical tools you can apply immediately in practice.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.9" d="M3 12h18"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"
+                d="M12 3c3 3.6 3 14.4 0 18-3-3.6-3-14.4 0-18z"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Regional Collaboration</h3>
+          <p class="feature-card__body">Networking opportunities that strengthen South Asian cardiovascular care networks.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROGRAMME PREVIEW -->
+    <section class="programme-preview" aria-label="Scientific programme preview">
+      <!-- cream wave into navy -->
+      <div class="wave-divider wave-divider--top" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="var(--color-cream)" d="M0,58 C360,96 520,12 720,28 C980,48 1140,88 1440,52 L1440,90 L0,90 Z" />
+        </svg>
+      </div>
+
+      <div class="section-inner section-inner--center">
+        <div class="eyebrow eyebrow--gold">SCIENTIFIC PROGRAMME</div>
+        <div class="line-starline" aria-hidden="true">
+          <span class="line-starline__line"></span>
+          <svg class="line-starline__star" viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M12 2l3.2 7.1L23 10l-6 4.9L18.7 22 12 18.6 5.3 22 7 14.9 1 10l7.8-.9L12 2z"/>
+          </svg>
+          <span class="line-starline__line"></span>
+        </div>
+
+        <h2 class="section-title section-title--white">Three Days of Cardiovascular Excellence</h2>
+
+        <div class="preview-cards">
+          <article class="preview-card">
+            <header class="preview-card__header">
+              <div class="preview-card__kicker">DAY 1 · 19 SEPTEMBER 2026</div>
+              <div class="preview-card__title">Hypertension</div>
+            </header>
+            <div class="preview-card__body">
+              <p class="preview-card__text">
+                Comprehensive updates on hypertension management, resistant hypertension, and target organ protection in the South Asian context.
+              </p>
+              <ul class="bullet-list">
+                <li>Hypertension Guidelines Update</li>
+                <li>Resistant Hypertension</li>
+                <li>Renal Denervation</li>
+                <li>Hypertension in Special Populations</li>
+                <li>Case Discussions</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="preview-card">
+            <header class="preview-card__header">
+              <div class="preview-card__kicker">DAY 2 · 20 SEPTEMBER 2026</div>
+              <div class="preview-card__title">Dyslipidemia &amp; Prevention</div>
+            </header>
+            <div class="preview-card__body">
+              <p class="preview-card__text">
+                Evidence-based strategies for lipid management, cardiovascular risk reduction, and primary and secondary prevention.
+              </p>
+              <ul class="bullet-list">
+                <li>Lipid Guidelines 2026</li>
+                <li>PCSK9 Inhibitors in Practice</li>
+                <li>Cardiovascular Risk Calculators</li>
+                <li>Preventive Cardiology</li>
+                <li>Interactive Case Workshop</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="preview-card">
+            <header class="preview-card__header">
+              <div class="preview-card__kicker">DAY 3 · 21 SEPTEMBER 2026</div>
+              <div class="preview-card__title">Heart Failure &amp; Future Directions</div>
+            </header>
+            <div class="preview-card__body">
+              <p class="preview-card__text">
+                Advances in heart failure management, device therapy, and emerging therapies shaping the future of cardiovascular care.
+              </p>
+              <ul class="bullet-list">
+                <li>HFrEF &amp; HFpEF Updates</li>
+                <li>SGLT2 Inhibitors &amp; Beyond</li>
+                <li>Device Therapy in HF</li>
+                <li>Emerging Therapeutics</li>
+                <li>Closing Symposium</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-actions">
+          <a class="pill pill--filled pill--gold" href="programme.html">View Full Programme &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE TEASER -->
+    <section class="venue-teaser" aria-label="Venue teaser">
+      <div class="section-inner">
+        <div class="venue-grid">
+          <div class="venue-media">
+            <div class="venue-media__frame" aria-hidden="true"></div>
+            <img class="venue-media__img" src="assets/images/venue-thimphu.jpg" alt="Thimphu venue (placeholder)" />
+          </div>
+
+          <div class="venue-copy">
+            <div class="eyebrow">VENUE &amp; DESTINATION</div>
+            <h2 class="venue-title">The Pema by Realm, Thimphu</h2>
+            <p class="venue-text">
+              Nestled in the heart of Thimphu, the capital of Bhutan, The Pema by Realm offers a world-class hospitality experience infused with authentic Bhutanese elegance. Surrounded by pristine Himalayan landscapes, it provides the perfect setting for a congress of this distinction.
+            </p>
+
+            <div class="venue-subheading">EXPERIENCE BHUTAN</div>
+
+            <div class="small-cards">
+              <div class="small-card">
+                <span class="small-card__dot" aria-hidden="true"></span>
+                <div>
+                  <div class="small-card__title">Buddha Dordenma</div>
+                  <div class="small-card__desc">The magnificent 51.5-metre gilded bronze Buddha statue overlooking the Thimphu valley.</div>
+                </div>
+              </div>
+              <div class="small-card">
+                <span class="small-card__dot" aria-hidden="true"></span>
+                <div>
+                  <div class="small-card__title">Tashichho Dzong</div>
+                  <div class="small-card__desc">The majestic fortress-monastery that serves as the seat of Bhutan's government and throne room.</div>
+                </div>
+              </div>
+              <div class="small-card">
+                <span class="small-card__dot" aria-hidden="true"></span>
+                <div>
+                  <div class="small-card__title">Memorial Chorten</div>
+                  <div class="small-card__desc">A sacred stupa built in memory of the third King of Bhutan, a spiritual landmark of Thimphu.</div>
+                </div>
+              </div>
+              <div class="small-card">
+                <span class="small-card__dot" aria-hidden="true"></span>
+                <div>
+                  <div class="small-card__title">Himalayan Views</div>
+                  <div class="small-card__desc">Breathtaking panoramas of the Eastern Himalayas, prayer flags, and pristine mountain air.</div>
+                </div>
+              </div>
+            </div>
+
+            <a class="venue-link" href="venue.html">
+              Explore Venue &amp; Bhutan &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION CTA -->
+    <section class="registration-cta" aria-label="Registration and enquiries">
+      <div class="section-inner section-inner--center">
+        <h2 class="section-title section-title--white">Registration &amp; Enquiries</h2>
+        <div class="line-starline line-starline--white" aria-hidden="true">
+          <span class="line-starline__line"></span>
+          <svg class="line-starline__star" viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M12 2l3.2 7.1L23 10l-6 4.9L18.7 22 12 18.6 5.3 22 7 14.9 1 10l7.8-.9L12 2z"/>
+          </svg>
+          <span class="line-starline__line"></span>
+        </div>
+        <p class="registration-text">
+          Registration for the South Asia Cardiovascular Meet 2026 is by invitation only.
+        </p>
+
+        <a class="registration-email" href="mailto:cvmeet@zohomail.com">
+          <svg class="registration-email__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/>
+            <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M3 8l9 6 9-6"/>
+          </svg>
+          cvmeet@zohomail.com
+        </a>
+
+        <div class="section-actions section-actions--two">
+          <a class="pill pill--filled pill--gold" href="contact.html">Send an Enquiry &rarr;</a>
+          <a class="pill pill--outline pill--white" href="invitation.html">Read the Invitation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOUNTAIN SILHOUETTE DIVIDER -->
+    <div class="mountain-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1440" height="150" fill="var(--color-navy)"/>
+        <path fill="var(--color-olive)"
+          d="M0 150 L0 118
+             L160 72 L240 28 L320 68 L400 102
+             L560 64 L720 10 L880 70 L1000 104
+             L1120 58 L1220 32 L1320 78 L1440 112
+             L1440 150 Z"/>
+        <g fill="#8A8A5C">
+          <g transform="translate(226 108)">
+            <rect x="6" y="16" width="24" height="26"/>
+            <rect x="2" y="13" width="32" height="4"/>
+            <polygon points="0,13 18,2 36,13"/>
+            <polygon points="6,6 18,-4 30,6"/>
+            <rect x="16.5" y="-14" width="3" height="12"/>
+            <polygon points="15,-13 18,-20 21,-13"/>
+          </g>
+          <g transform="translate(702 108)">
+            <rect x="6" y="16" width="24" height="26"/>
+            <rect x="2" y="13" width="32" height="4"/>
+            <polygon points="0,13 18,2 36,13"/>
+            <polygon points="6,6 18,-4 30,6"/>
+            <rect x="16.5" y="-14" width="3" height="12"/>
+            <polygon points="15,-13 18,-20 21,-13"/>
+          </g>
+          <g transform="translate(1202 108)">
+            <rect x="6" y="16" width="24" height="26"/>
+            <rect x="2" y="13" width="32" height="4"/>
+            <polygon points="0,13 18,2 36,13"/>
+            <polygon points="6,6 18,-4 30,6"/>
+            <rect x="16.5" y="-14" width="3" height="12"/>
+            <polygon points="15,-13 18,-20 21,-13"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="footer-brand">
-        <a class="site-logo" href="index.html" aria-label="South Asia Cardiovascular Meet 2026 home">
-          <svg class="site-logo__badge" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
-            <defs>
-              <clipPath id="footer-heart-clip">
-                <path d="M24 35.5
+      <div class="site-footer__inner">
+        <div class="footer-brand">
+          <a class="site-logo" href="index.html" aria-label="South Asia Cardiovascular Meet 2026 home">
+            <svg class="site-logo__badge" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
+              <defs>
+                <clipPath id="footer-heart-clip">
+                  <path d="M24 35.5
+                     C24 35.5 11.5 26.8 11.5 19.2
+                     C11.5 15.2 14.4 12.6 17.8 12.6
+                     C20.4 12.6 22.4 14 24 16.6
+                     C25.6 14 27.6 12.6 30.2 12.6
+                     C33.6 12.6 36.5 15.2 36.5 19.2
+                     C36.5 26.8 24 35.5 24 35.5Z"/>
+                </clipPath>
+              </defs>
+              <circle cx="24" cy="24" r="22.5" fill="var(--color-cream)" stroke="var(--color-gold)" stroke-width="1.5"/>
+              <path fill="var(--color-maroon)"
+                d="M24 35.5
                    C24 35.5 11.5 26.8 11.5 19.2
                    C11.5 15.2 14.4 12.6 17.8 12.6
                    C20.4 12.6 22.4 14 24 16.6
                    C25.6 14 27.6 12.6 30.2 12.6
                    C33.6 12.6 36.5 15.2 36.5 19.2
                    C36.5 26.8 24 35.5 24 35.5Z"/>
-              </clipPath>
-            </defs>
-            <circle cx="24" cy="24" r="22.5" fill="var(--color-cream)" stroke="var(--color-gold)" stroke-width="1.5"/>
-            <path fill="var(--color-maroon)"
-              d="M24 35.5
-                 C24 35.5 11.5 26.8 11.5 19.2
-                 C11.5 15.2 14.4 12.6 17.8 12.6
-                 C20.4 12.6 22.4 14 24 16.6
-                 C25.6 14 27.6 12.6 30.2 12.6
-                 C33.6 12.6 36.5 15.2 36.5 19.2
-                 C36.5 26.8 24 35.5 24 35.5Z"/>
-            <path fill="none" stroke="var(--color-white)" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#footer-heart-clip)"
-              d="M9 24 H15.2 L17.1 19.2 L19.4 30.2 L22.1 15 L24.8 27.4 L26.6 24 H31.2 L33.1 21.2 L35.2 24 H39"/>
-          </svg>
-          <span class="site-logo__text">
-            <span>South Asia</span>
-            <span>Cardiovascular</span>
-            <span>Meet 2026</span>
-          </span>
-        </a>
-        <p class="footer-brand__tagline">A prestigious gathering of cardiovascular specialists from across South Asia, united by a shared commitment to advancing cardiac care.</p>
+              <path fill="none" stroke="var(--color-white)" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#footer-heart-clip)"
+                d="M9 24 H15.2 L17.1 19.2 L19.4 30.2 L22.1 15 L24.8 27.4 L26.6 24 H31.2 L33.1 21.2 L35.2 24 H39"/>
+            </svg>
+            <span class="site-logo__text">
+              <span>South Asia</span>
+              <span>Cardiovascular</span>
+              <span>Meet 2026</span>
+            </span>
+          </a>
+          <p class="footer-brand__tagline">A prestigious gathering of cardiovascular specialists from across South Asia, united by a shared commitment to advancing cardiac care.</p>
+        </div>
+
+        <div class="footer-nav">
+          <h2 class="footer-heading">Navigation</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programme.html">Scientific Programme</a></li>
+            <li><a href="invitation.html">Chairpersons' Invitation</a></li>
+            <li><a href="venue.html">Venue &amp; Bhutan</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-details">
+          <h2 class="footer-heading">Event Details</h2>
+          <ul>
+            <li>
+              <svg class="footer-details__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/>
+                <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M8 3v4M16 3v4M3 10h18"/>
+              </svg>
+              <span>19–21 September 2026</span>
+            </li>
+            <li>
+              <svg class="footer-details__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"
+                  d="M12 21s-7-6.2-7-11.2a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/>
+                <circle cx="12" cy="9.8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.75"/>
+              </svg>
+              <span>The Pema by Realm<br>Thimphu, Bhutan</span>
+            </li>
+            <li>
+              <svg class="footer-details__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/>
+                <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" d="M3 8l9 6 9-6"/>
+              </svg>
+              <a href="mailto:cvmeet@zohomail.com">cvmeet@zohomail.com</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="footer-nav">
-        <h2 class="footer-heading">Navigation</h2>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="programme.html">Scientific Programme</a></li>
-          <li><a href="invitation.html">Chairpersons' Invitation</a></li>
-          <li><a href="venue.html">Venue &amp; Bhutan</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="site-footer__bar">
+        <p class="site-footer__copy">© 2026 South Asia Cardiovascular Meet 2026. All rights reserved.</p>
+        <p class="site-footer__note">Registration by Invitation Only</p>
       </div>
-
-      <div class="footer-details">
-        <h2 class="footer-heading">Event Details</h2>
-        <ul>
-          <li>
-            <svg class="footer-details__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-              <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/>
-              <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M8 3v4M16 3v4M3 10h18"/>
-            </svg>
-            <span>19–21 September 2026</span>
-          </li>
-          <li>
-            <svg class="footer-details__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-              <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"
-                d="M12 21s-7-6.2-7-11.2a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/>
-              <circle cx="12" cy="9.8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.75"/>
-            </svg>
-            <span>The Pema by Realm<br>Thimphu, Bhutan</span>
-          </li>
-          <li>
-            <svg class="footer-details__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-              <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/>
-              <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" d="M3 8l9 6 9-6"/>
-            </svg>
-            <a href="mailto:cvmeet@zohomail.com">cvmeet@zohomail.com</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="site-footer__bar">
-      <p class="site-footer__copy">© 2026 South Asia Cardiovascular Meet 2026. All rights reserved.</p>
-      <p class="site-footer__note">Registration by Invitation Only</p>
-    </div>
-  </footer>
-</div>
+    </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
