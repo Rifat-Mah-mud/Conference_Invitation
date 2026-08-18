@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav(header);
   }
 
+  initHomeHeroSequence();
+  initScrollReveal();
   initCountdown();
   initProgrammeTabs();
 });
@@ -129,6 +131,83 @@ function initCountdown() {
 
   render();
   window.setInterval(render, 1000);
+}
+
+function initHomeHeroSequence() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const sequenceTargets = [
+    hero.querySelector('.hero__title'),
+    hero.querySelector('.hero__tagline'),
+    hero.querySelector('.hero__pills'),
+    hero.querySelector('.countdown'),
+  ].filter(Boolean);
+
+  if (!sequenceTargets.length) return;
+
+  document.body.classList.add('js-has-animations');
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    sequenceTargets.forEach((element) => element.classList.add('is-visible'));
+    return;
+  }
+
+  sequenceTargets.forEach((element, index) => {
+    element.classList.add('hero-sequence-item');
+    window.setTimeout(() => {
+      element.classList.add('is-visible');
+    }, 180 + index * 300);
+  });
+}
+
+function initScrollReveal() {
+  const revealTargets = document.querySelectorAll(`
+    .info-strip__col,
+    .about .eyebrow,
+    .about .line-starline,
+    .about .section-title,
+    .about .lead,
+    .feature-card,
+    .programme-preview .eyebrow,
+    .programme-preview .line-starline,
+    .programme-preview .section-title,
+    .preview-card,
+    .programme-preview .section-actions,
+    .venue-media,
+    .venue-copy,
+    .small-card,
+    .registration-cta .section-title,
+    .registration-cta .line-starline,
+    .registration-cta .registration-text,
+    .registration-cta .registration-email,
+    .registration-cta .section-actions
+  `);
+
+  if (!revealTargets.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  revealTargets.forEach((element) => {
+    element.classList.add('scroll-reveal');
+    if (reduceMotion) {
+      element.classList.add('is-visible');
+    }
+  });
+
+  if (reduceMotion) return;
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        currentObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+  );
+
+  revealTargets.forEach((element) => observer.observe(element));
 }
 
 const PROGRAMME_DAYS = [
