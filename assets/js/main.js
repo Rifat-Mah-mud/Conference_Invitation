@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('site-header');
-  if (!header) return;
-
-  highlightActiveNav(header);
-  initMobileNav(header);
+  if (header) {
+    highlightActiveNav(header);
+    initMobileNav(header);
+  }
 
   initCountdown();
+  initProgrammeTabs();
 });
 
 function getPageId(header) {
@@ -128,4 +129,150 @@ function initCountdown() {
 
   render();
   window.setInterval(render, 1000);
+}
+
+const PROGRAMME_DAYS = [
+  {
+    kicker: 'DAY 1',
+    title: 'Hypertension',
+    weekday: 'Friday',
+    dateLabel: 'Friday, 19 September 2026',
+    sessions: [
+      { time: '08:30', title: 'Registration & Welcome Coffee', type: 'break' },
+      { time: '09:00', title: "Inaugural Ceremony & Chairpersons' Address", type: 'session' },
+      { time: '09:45', title: "Hypertension Guidelines 2026: What's New?", type: 'session' },
+      { time: '10:30', title: 'Resistant Hypertension: Diagnosis & Management', type: 'session' },
+      { time: '11:00', title: 'Tea Break & Networking', type: 'break' },
+      { time: '11:30', title: 'Renal Denervation: Evidence & Practice', type: 'session' },
+      { time: '12:15', title: 'Hypertension in Special Populations', type: 'session' },
+      { time: '13:00', title: 'Lunch Break', type: 'break' },
+      { time: '14:00', title: 'Target Organ Protection in Hypertension', type: 'session' },
+      { time: '14:45', title: 'Interactive Case Discussions: Hypertension', type: 'session' },
+      { time: '15:30', title: 'Tea Break', type: 'break' },
+      { time: '16:00', title: 'Panel Discussion: Hypertension in South Asia', type: 'session' },
+      { time: '17:00', title: 'End of Day 1', type: 'break' },
+    ],
+  },
+  {
+    kicker: 'DAY 2',
+    title: 'Dyslipidemia & Prevention',
+    weekday: 'Saturday',
+    dateLabel: 'Saturday, 20 September 2026',
+    sessions: [
+      { time: '10:00', title: 'Dyslipidemia in South Asia: Prevalence & Risk Impact', type: 'session' },
+      { time: '10:30', title: 'Latest Guidelines for Lipid Management: Key Recommendations', type: 'session' },
+      { time: '11:30', title: 'Role of Non-Statin Therapies: PCSK9 Inhibitors & Beyond', type: 'session' },
+      { time: '12:00', title: 'Hypertriglyceridemia: Evaluation & Management', type: 'session' },
+      { time: '12:45', title: 'Lunch Break', type: 'break' },
+      { time: '14:00', title: 'Cardiovascular Risk Calculators in Practice', type: 'session' },
+      { time: '14:45', title: 'Primary & Secondary Prevention Strategies', type: 'session' },
+      { time: '15:30', title: 'Tea Break', type: 'break' },
+      { time: '16:00', title: 'Interactive Case Workshop: Lipid Management', type: 'session' },
+      { time: '16:45', title: 'Panel Discussion: Dyslipidemia & Prevention', type: 'session' },
+      { time: '17:30', title: 'End of Day 2', type: 'break' },
+    ],
+  },
+  {
+    kicker: 'DAY 3',
+    title: 'Heart Failure & Future Directions',
+    weekday: 'Sunday',
+    dateLabel: 'Sunday, 21 September 2026',
+    sessions: [
+      { time: '10:00', title: 'Heart Failure in South Asia: Current Challenges & Epidemiology', type: 'session' },
+      { time: '10:30', title: 'Phenotypes of Heart Failure: HFrEF, HFmrEF, HFpEF', type: 'session' },
+      { time: '11:00', title: 'Guideline-Directed Medical Therapy in HFrEF: Evidence to Practice', type: 'session' },
+      { time: '11:30', title: "Managing Acute Heart Failure: What's New?", type: 'session' },
+      { time: '12:00', title: 'Device Therapy & Advanced Heart Failure Management', type: 'session' },
+      { time: '12:45', title: 'Lunch Break', type: 'break' },
+      { time: '14:00', title: 'SGLT2 Inhibitors & Beyond in Heart Failure', type: 'session' },
+      { time: '14:45', title: 'Emerging Therapeutics in Cardiovascular Care', type: 'session' },
+      { time: '15:30', title: 'Tea Break', type: 'break' },
+      { time: '16:00', title: 'Closing Symposium', type: 'session' },
+      { time: '16:45', title: 'End of Day 3 / Congress Concludes', type: 'break' },
+    ],
+  },
+];
+
+function renderSchedule(day) {
+  const list = document.getElementById('scheduleList');
+  if (!list) return;
+
+  list.replaceChildren();
+
+  day.sessions.forEach((item) => {
+    const row = document.createElement('li');
+    row.className = `schedule-row schedule-row--${item.type}`;
+
+    const time = document.createElement('span');
+    time.className = 'schedule-row__time';
+    time.textContent = item.time;
+
+    const dot = document.createElement('span');
+    dot.className = 'schedule-row__dot';
+    dot.setAttribute('aria-hidden', 'true');
+
+    const title = document.createElement('span');
+    title.className = 'schedule-row__title';
+    title.textContent = item.title;
+
+    row.append(time, dot, title);
+    list.appendChild(row);
+  });
+}
+
+function showProgrammeDay(index, tabs, panel) {
+  const day = PROGRAMME_DAYS[index];
+  if (!day) return;
+
+  tabs.forEach((tab, tabIndex) => {
+    const isActive = tabIndex === index;
+    tab.classList.toggle('is-active', isActive);
+    tab.setAttribute('aria-selected', String(isActive));
+    tab.tabIndex = isActive ? 0 : -1;
+  });
+
+  document.getElementById('dayPanelKicker').textContent = day.kicker;
+  document.getElementById('dayPanelTitle').textContent = day.title;
+  document.getElementById('dayPanelDate').textContent = day.dateLabel;
+  panel.setAttribute('aria-labelledby', tabs[index].id);
+
+  renderSchedule(day);
+}
+
+function initProgrammeTabs() {
+  const tabsRoot = document.getElementById('dayTabs');
+  const panel = document.getElementById('dayPanel');
+  if (!tabsRoot || !panel) return;
+
+  const tabs = Array.from(tabsRoot.querySelectorAll('[role="tab"]'));
+  if (!tabs.length) return;
+
+  showProgrammeDay(0, tabs, panel);
+
+  tabsRoot.addEventListener('click', (event) => {
+    const tab = event.target.closest('[role="tab"]');
+    if (!tab || !tabsRoot.contains(tab)) return;
+    showProgrammeDay(Number(tab.dataset.day), tabs, panel);
+  });
+
+  tabsRoot.addEventListener('keydown', (event) => {
+    const currentIndex = tabs.findIndex((tab) => tab.classList.contains('is-active'));
+    let nextIndex = currentIndex;
+
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      nextIndex = (currentIndex + 1) % tabs.length;
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    } else if (event.key === 'Home') {
+      nextIndex = 0;
+    } else if (event.key === 'End') {
+      nextIndex = tabs.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    tabs[nextIndex].focus();
+    showProgrammeDay(nextIndex, tabs, panel);
+  });
 }

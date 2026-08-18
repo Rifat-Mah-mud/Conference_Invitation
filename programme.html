@@ -69,46 +69,108 @@
 </header>
 
   <main>
-    <!-- Programme page content will be added in a later phase -->
+    <section class="hero hero--page" aria-label="Scientific programme">
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          <span class="hero__eyebrow-line">—</span>
+          <span>SCIENTIFIC PROGRAMME</span>
+          <span class="hero__eyebrow-line">—</span>
+        </p>
+        <h1 class="hero__title">Three Days of Cardiovascular Excellence</h1>
+        <p class="hero__sub">19–21 September 2026 · Thimphu, Bhutan</p>
+      </div>
+
+      <div class="hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="var(--color-cream)" d="M0,58 C360,96 520,12 720,28 C980,48 1140,88 1440,52 L1440,90 L0,90 Z"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="programme-days" aria-label="Daily scientific programme">
+      <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Congress days">
+        <button type="button" class="day-tab is-active" id="tab-day-0" role="tab" aria-selected="true" aria-controls="dayPanel" data-day="0">
+          <span class="day-tab__kicker">DAY 1</span>
+          <span class="day-tab__title">Hypertension</span>
+          <span class="day-tab__weekday">Friday</span>
+        </button>
+        <button type="button" class="day-tab" id="tab-day-1" role="tab" aria-selected="false" aria-controls="dayPanel" data-day="1">
+          <span class="day-tab__kicker">DAY 2</span>
+          <span class="day-tab__title">Dyslipidemia &amp; Prevention</span>
+          <span class="day-tab__weekday">Saturday</span>
+        </button>
+        <button type="button" class="day-tab" id="tab-day-2" role="tab" aria-selected="false" aria-controls="dayPanel" data-day="2">
+          <span class="day-tab__kicker">DAY 3</span>
+          <span class="day-tab__title">Heart Failure &amp; Future Directions</span>
+          <span class="day-tab__weekday">Sunday</span>
+        </button>
+      </div>
+
+      <article class="day-panel" id="dayPanel" role="tabpanel" aria-labelledby="tab-day-0">
+        <header class="day-panel__header">
+          <div>
+            <p class="day-panel__kicker" id="dayPanelKicker">DAY 1</p>
+            <h2 class="day-panel__title" id="dayPanelTitle">Hypertension</h2>
+          </div>
+          <div class="day-panel__badge">
+            <svg class="pill__icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+              <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8 3v4M16 3v4M3 10h18"/>
+            </svg>
+            <span id="dayPanelDate">Friday, 19 September 2026</span>
+          </div>
+        </header>
+        <ul class="schedule-list" id="scheduleList"></ul>
+        <p class="day-panel__note">Programme subject to change. Final schedule will be communicated to registered delegates.</p>
+      </article>
+    </section>
+
+    <section class="registration-cta registration-cta--strip" aria-label="Registration notice">
+      <p class="registration-cta__heading">Registration is by invitation only.</p>
+      <p class="registration-text">For enquiries, please contact the organising committee.</p>
+      <div class="section-actions">
+        <a class="pill pill--filled pill--gold" href="contact.html">Send an Enquiry &rarr;</a>
+      </div>
+    </section>
+
+    <div class="mountain-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1440" height="150" fill="var(--color-navy)"/>
+        <path fill="var(--color-olive)"
+          d="M0 150 L0 118
+             L160 72 L240 28 L320 68 L400 102
+             L560 64 L720 10 L880 70 L1000 104
+             L1120 58 L1220 32 L1320 78 L1440 112
+             L1440 150 Z"/>
+        <g fill="#8A8A5C">
+          <g transform="translate(226 108)">
+            <rect x="6" y="16" width="24" height="26"/>
+            <rect x="2" y="13" width="32" height="4"/>
+            <polygon points="0,13 18,2 36,13"/>
+            <polygon points="6,6 18,-4 30,6"/>
+            <rect x="16.5" y="-14" width="3" height="12"/>
+            <polygon points="15,-13 18,-20 21,-13"/>
+          </g>
+          <g transform="translate(702 108)">
+            <rect x="6" y="16" width="24" height="26"/>
+            <rect x="2" y="13" width="32" height="4"/>
+            <polygon points="0,13 18,2 36,13"/>
+            <polygon points="6,6 18,-4 30,6"/>
+            <rect x="16.5" y="-14" width="3" height="12"/>
+            <polygon points="15,-13 18,-20 21,-13"/>
+          </g>
+          <g transform="translate(1202 108)">
+            <rect x="6" y="16" width="24" height="26"/>
+            <rect x="2" y="13" width="32" height="4"/>
+            <polygon points="0,13 18,2 36,13"/>
+            <polygon points="6,6 18,-4 30,6"/>
+            <rect x="16.5" y="-14" width="3" height="12"/>
+            <polygon points="15,-13 18,-20 21,-13"/>
+          </g>
+        </g>
+      </svg>
+    </div>
   </main>
-<div class="site-footer-block">
-  <div class="mountain-divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="1440" height="150" fill="var(--color-navy)"/>
-      <path fill="var(--color-olive)"
-        d="M0 150 L0 118
-           L160 72 L240 28 L320 68 L400 102
-           L560 64 L720 10 L880 70 L1000 104
-           L1120 58 L1220 32 L1320 78 L1440 112
-           L1440 150 Z"/>
-      <g fill="#8A8A5C">
-        <g transform="translate(226 108)">
-          <rect x="6" y="16" width="24" height="26"/>
-          <rect x="2" y="13" width="32" height="4"/>
-          <polygon points="0,13 18,2 36,13"/>
-          <polygon points="6,6 18,-4 30,6"/>
-          <rect x="16.5" y="-14" width="3" height="12"/>
-          <polygon points="15,-13 18,-20 21,-13"/>
-        </g>
-        <g transform="translate(702 108)">
-          <rect x="6" y="16" width="24" height="26"/>
-          <rect x="2" y="13" width="32" height="4"/>
-          <polygon points="0,13 18,2 36,13"/>
-          <polygon points="6,6 18,-4 30,6"/>
-          <rect x="16.5" y="-14" width="3" height="12"/>
-          <polygon points="15,-13 18,-20 21,-13"/>
-        </g>
-        <g transform="translate(1202 108)">
-          <rect x="6" y="16" width="24" height="26"/>
-          <rect x="2" y="13" width="32" height="4"/>
-          <polygon points="0,13 18,2 36,13"/>
-          <polygon points="6,6 18,-4 30,6"/>
-          <rect x="16.5" y="-14" width="3" height="12"/>
-          <polygon points="15,-13 18,-20 21,-13"/>
-        </g>
-      </g>
-    </svg>
-  </div>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
@@ -192,7 +254,6 @@
       <p class="site-footer__note">Registration by Invitation Only</p>
     </div>
   </footer>
-</div>
 
   <script src="assets/js/main.js"></script>
 </body>
