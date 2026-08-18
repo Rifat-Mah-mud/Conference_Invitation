@@ -195,7 +195,12 @@ function initScrollReveal() {
     .theme-callout,
     .invitation-info__card,
     .venue-detail-media,
-    .venue-detail-copy,
+    .venue-eyebrow,
+    .venue-h2,
+    .venue-italic-sub,
+    .venue-detail-divider,
+    .venue-detail-text,
+    .venue-feature-card,
     .experience-bhutan .eyebrow,
     .experience-bhutan .line-starline,
     .experience-bhutan .experience-title,
@@ -232,6 +237,7 @@ function initScrollReveal() {
     .invitation-info__grid,
     .bhutan-attractions,
     .getting-grid,
+    .venue-feature-grid,
     .contact-sidebar
   `).forEach((group) => {
     Array.from(group.children)
