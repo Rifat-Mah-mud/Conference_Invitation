@@ -1597,3 +1597,344 @@ main {
     font-size: 30px;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* Venue & Bhutan page                                                      */
+/* -------------------------------------------------------------------------- */
+
+.hero--venue {
+  min-height: 450px;
+  height: 450px;
+  background-image: url("../images/venue-hero.jpg");
+}
+
+.hero--venue .hero__content {
+  min-height: 450px;
+  padding: 92px 24px 120px;
+}
+
+.venue-detail {
+  background: var(--color-cream);
+  padding: 100px 24px;
+}
+
+.venue-detail__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.venue-detail-media {
+  position: relative;
+}
+
+.venue-image-tag {
+  position: absolute;
+  left: 0;
+  bottom: 18px;
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 10px 20px rgba(18, 41, 63, 0.25);
+}
+
+.venue-image-tag__top {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  line-height: 1.2;
+}
+
+.venue-image-tag__bottom {
+  margin-top: 2px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.venue-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  font-weight: 900;
+  font-size: 12px;
+  color: var(--color-gold);
+}
+
+.venue-h2 {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 1.2;
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.venue-italic-sub {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--color-gold);
+  line-height: 1.6;
+}
+
+.venue-detail-divider {
+  margin-top: 22px;
+  height: 1px;
+  background: rgba(18, 41, 63, 0.18);
+}
+
+.venue-detail-text {
+  margin-top: 18px;
+  color: rgba(42, 42, 42, 0.72);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.venue-feature-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.venue-feature-card {
+  background: #EDE6D6;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.venue-feature-card__icon {
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.venue-feature-card__title {
+  font-family: var(--font-display);
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.venue-feature-card__desc {
+  color: rgba(42, 42, 42, 0.72);
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.experience-bhutan {
+  background: var(--color-navy);
+  padding: 100px 24px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.experience-title {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.experience-title--navy {
+  color: var(--color-navy);
+}
+
+.experience-text {
+  margin: 18px auto 0;
+  max-width: 750px;
+  color: rgba(245, 240, 230, 0.72);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.bhutan-attractions {
+  margin-top: 48px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.bhutan-card {
+  background: var(--color-cream);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.bhutan-card__media {
+  position: relative;
+}
+
+.bhutan-card__img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.bhutan-card__num {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 2px solid var(--color-gold);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.bhutan-card__body {
+  padding: 20px;
+}
+
+.bhutan-card__title {
+  font-family: var(--font-display);
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.bhutan-card__desc {
+  margin-top: 10px;
+  color: rgba(42, 42, 42, 0.72);
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.getting-to-bhutan {
+  background: var(--color-cream);
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.experience-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  font-weight: 900;
+  font-size: 12px;
+  color: var(--color-gold);
+}
+
+.getting-grid {
+  margin: 48px auto 0;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.getting-card {
+  background: var(--color-navy);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  color: var(--color-white);
+}
+
+.getting-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 2px solid var(--color-gold);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.getting-card__title {
+  margin-top: 18px;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.getting-card__text {
+  margin-top: 12px;
+  color: rgba(245, 240, 230, 0.72);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.venue-cta {
+  background: var(--color-navy);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.venue-cta__title {
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.venue-cta__text {
+  margin: 18px auto 0;
+  color: rgba(245, 240, 230, 0.72);
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 820px;
+}
+
+@media (max-width: 899px) {
+  .hero--venue {
+    height: auto;
+    min-height: 450px;
+  }
+
+  .hero--venue .hero__content {
+    min-height: 450px;
+    padding-top: 92px;
+  }
+
+  .venue-detail__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .bhutan-attractions,
+  .getting-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bhutan-card__img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero--venue .hero__content {
+    padding-top: 92px;
+    padding-bottom: 110px;
+  }
+
+  .bhutan-card__img {
+    height: 200px;
+  }
+
+  .venue-detail__grid {
+    gap: 24px;
+  }
+}
