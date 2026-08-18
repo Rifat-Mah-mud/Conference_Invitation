@@ -158,18 +158,21 @@ const PROGRAMME_DAYS = [
     title: 'Dyslipidemia & Prevention',
     weekday: 'Saturday',
     dateLabel: 'Saturday, 20 September 2026',
+    theme: 'navy',
     sessions: [
-      { time: '10:00', title: 'Dyslipidemia in South Asia: Prevalence & Risk Impact', type: 'session' },
-      { time: '10:30', title: 'Latest Guidelines for Lipid Management: Key Recommendations', type: 'session' },
-      { time: '11:30', title: 'Role of Non-Statin Therapies: PCSK9 Inhibitors & Beyond', type: 'session' },
-      { time: '12:00', title: 'Hypertriglyceridemia: Evaluation & Management', type: 'session' },
-      { time: '12:45', title: 'Lunch Break', type: 'break' },
-      { time: '14:00', title: 'Cardiovascular Risk Calculators in Practice', type: 'session' },
-      { time: '14:45', title: 'Primary & Secondary Prevention Strategies', type: 'session' },
+      { time: '08:30', title: 'Morning Coffee & Networking', type: 'break' },
+      { time: '09:00', title: 'Lipid Guidelines 2026: Key Updates', type: 'session' },
+      { time: '09:45', title: 'PCSK9 Inhibitors: Real-World Evidence', type: 'session' },
+      { time: '10:30', title: 'Cardiovascular Risk Calculators in South Asia', type: 'session' },
+      { time: '11:00', title: 'Tea Break & Networking', type: 'break' },
+      { time: '11:30', title: 'Preventive Cardiology: Lifestyle & Pharmacotherapy', type: 'session' },
+      { time: '12:15', title: 'Statin Intolerance: Practical Approaches', type: 'session' },
+      { time: '13:00', title: 'Lunch Break', type: 'break' },
+      { time: '14:00', title: 'Triglycerides & Residual Risk', type: 'session' },
+      { time: '14:45', title: 'Interactive Case Workshop: Dyslipidemia', type: 'session' },
       { time: '15:30', title: 'Tea Break', type: 'break' },
-      { time: '16:00', title: 'Interactive Case Workshop: Lipid Management', type: 'session' },
-      { time: '16:45', title: 'Panel Discussion: Dyslipidemia & Prevention', type: 'session' },
-      { time: '17:30', title: 'End of Day 2', type: 'break' },
+      { time: '16:00', title: 'Panel Discussion: Prevention Strategies for South Asia', type: 'session' },
+      { time: '17:00', title: 'Congress Dinner & Cultural Evening', type: 'break' },
     ],
   },
   {
@@ -177,18 +180,19 @@ const PROGRAMME_DAYS = [
     title: 'Heart Failure & Future Directions',
     weekday: 'Sunday',
     dateLabel: 'Sunday, 21 September 2026',
+    theme: 'gold',
     sessions: [
-      { time: '10:00', title: 'Heart Failure in South Asia: Current Challenges & Epidemiology', type: 'session' },
-      { time: '10:30', title: 'Phenotypes of Heart Failure: HFrEF, HFmrEF, HFpEF', type: 'session' },
-      { time: '11:00', title: 'Guideline-Directed Medical Therapy in HFrEF: Evidence to Practice', type: 'session' },
-      { time: '11:30', title: "Managing Acute Heart Failure: What's New?", type: 'session' },
-      { time: '12:00', title: 'Device Therapy & Advanced Heart Failure Management', type: 'session' },
-      { time: '12:45', title: 'Lunch Break', type: 'break' },
-      { time: '14:00', title: 'SGLT2 Inhibitors & Beyond in Heart Failure', type: 'session' },
-      { time: '14:45', title: 'Emerging Therapeutics in Cardiovascular Care', type: 'session' },
-      { time: '15:30', title: 'Tea Break', type: 'break' },
-      { time: '16:00', title: 'Closing Symposium', type: 'session' },
-      { time: '16:45', title: 'End of Day 3 / Congress Concludes', type: 'break' },
+      { time: '08:30', title: 'Morning Coffee & Networking', type: 'break' },
+      { time: '09:00', title: 'HFrEF & HFpEF: 2026 Updates', type: 'session' },
+      { time: '09:45', title: 'SGLT2 Inhibitors & Beyond: Expanding Indications', type: 'session' },
+      { time: '10:30', title: 'Device Therapy in Heart Failure', type: 'session' },
+      { time: '11:00', title: 'Tea Break & Networking', type: 'break' },
+      { time: '11:30', title: 'Emerging Therapeutics in Cardiovascular Medicine', type: 'session' },
+      { time: '12:15', title: 'Artificial Intelligence in Cardiology', type: 'session' },
+      { time: '13:00', title: 'Lunch Break', type: 'break' },
+      { time: '14:00', title: 'Closing Symposium: The Future of CV Care in South Asia', type: 'session' },
+      { time: '15:00', title: 'Valedictory Ceremony & Closing Address', type: 'session' },
+      { time: '15:45', title: 'Farewell Tea', type: 'break' },
     ],
   },
 ];
@@ -235,6 +239,7 @@ function showProgrammeDay(index, tabs, panel) {
   document.getElementById('dayPanelTitle').textContent = day.title;
   document.getElementById('dayPanelDate').textContent = day.dateLabel;
   panel.setAttribute('aria-labelledby', tabs[index].id);
+  panel.setAttribute('data-theme', day.theme || 'maroon');
 
   renderSchedule(day);
 }

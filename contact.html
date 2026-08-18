@@ -69,7 +69,84 @@
 </header>
 
   <main>
-    <!-- Contact page content will be added in a later phase -->
+    <section class="hero hero--contact" aria-label="Contact page hero">
+      <div class="hero__content">
+        <div class="eyebrow eyebrow--gold">GET IN TOUCH</div>
+        <h1 class="hero__title">Contact Us</h1>
+        <p class="hero__sub hero__sub--light">Registration is by invitation only. For enquiries, please reach out to the organising committee.</p>
+      </div>
+      <div class="hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="var(--color-cream)" d="M0,58 C360,96 520,12 720,28 C980,48 1140,88 1440,52 L1440,90 L0,90 Z"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-label="Contact form and event information">
+      <div class="contact-grid">
+        <aside class="contact-sidebar">
+          <article class="contact-info-card contact-info-card--navy">
+            <div class="contact-info-card__label">Email</div>
+            <a class="contact-info-card__email" href="mailto:cvmeet@zohomail.com">cvmeet@zohomail.com</a>
+          </article>
+
+          <article class="contact-info-card contact-info-card--light card--gradient-top">
+            <div class="gradient-top-bar" aria-hidden="true"></div>
+            <div class="contact-info-card__body">
+              <h2 class="contact-info-card__title">Registration</h2>
+              <p class="contact-info-card__text">
+                Attendance at the South Asia Cardiovascular Meet 2026 is by invitation only.
+                If you have received an invitation and wish to confirm your participation, or if you
+                have a general enquiry, please use the form below or write to us directly.
+              </p>
+            </div>
+          </article>
+
+          <article class="contact-event-card">
+            <div class="contact-event-card__row">
+              <span class="contact-event-card__key">Dates</span>
+              <strong class="contact-event-card__value">19 – 21 September 2026</strong>
+            </div>
+            <div class="contact-event-card__row">
+              <span class="contact-event-card__key">Venue</span>
+              <strong class="contact-event-card__value">The Pema by Realm</strong>
+            </div>
+            <div class="contact-event-card__row">
+              <span class="contact-event-card__key">Location</span>
+              <strong class="contact-event-card__value">Thimphu, Bhutan</strong>
+            </div>
+          </article>
+        </aside>
+
+        <article class="contact-form-card card--gradient-top">
+          <div class="gradient-top-bar" aria-hidden="true"></div>
+          <div class="contact-form-card__inner">
+            <h2 class="contact-form-card__title">Send an Enquiry</h2>
+
+            <form class="contact-form" action="#" method="post">
+              <label class="contact-form__label" for="contactName">Full Name <span aria-hidden="true">*</span></label>
+              <input class="contact-form__input" id="contactName" name="name" type="text" placeholder="Your full name" required>
+
+              <label class="contact-form__label" for="contactEmail">Email Address <span aria-hidden="true">*</span></label>
+              <input class="contact-form__input" id="contactEmail" name="email" type="email" placeholder="Your email address" required>
+
+              <label class="contact-form__label" for="contactInstitution">Institution / Hospital</label>
+              <input class="contact-form__input" id="contactInstitution" name="institution" type="text" placeholder="Hospital / Institution">
+
+              <label class="contact-form__label" for="contactMessage">Message</label>
+              <textarea class="contact-form__input contact-form__textarea" id="contactMessage" name="message" placeholder="Your message or enquiry..."></textarea>
+
+              <button class="contact-form__submit" type="submit">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                  <path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M4 12h16M13 5l7 7-7 7"/>
+                </svg>
+                <span>Send Enquiry</span>
+              </button>
+            </form>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 <div class="site-footer-block">
   <div class="mountain-divider" aria-hidden="true">
